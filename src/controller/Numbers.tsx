@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, StyleSheet, TouchableOpacity, Image } from 'react-native'
-import { format } from 'path';
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native'
 
 export class Numbers extends Component {
 
@@ -8,23 +7,31 @@ export class Numbers extends Component {
 
     }
 
-    render() {
+    layoutHTML() {
         const layout = [[1, 2, 3], [4, 5, 6], [7, 8, 9], ['.', 0, 'clr']]
-        const layoutHTML = [];
+        const layoutHTML  = [];
         for(const layer of layout) {
-            for(const value of layer) {
-                layoutHTML.push(
-                    <TouchableOpacity key={value} onPress={this._onPressButton}>
-                        <Text>{value}</Text>
-                    </TouchableOpacity>)
-            }
+            layoutHTML.push(<View style={styles.container}>{this.buildChildRow(layer)}</View>)
         }
+        return layoutHTML
+    }
+
+    buildChildRow(layer) {
+        const array = [];
+        for(const value of layer) {
+            array.push(
+                <TouchableOpacity style={styles.buttons} key={value} onPress={this._onPressButton}>
+                    <Text>{value}</Text>
+                </TouchableOpacity>)
+        }
+        return array;
+    }
+
+    render() {
+    
         return (
             <View style={styles.container}>
-                
-                <TouchableOpacity onPress={this._onPressButton}>
-                    {layoutHTML}
-                </TouchableOpacity>
+                {this.layoutHTML()}
             </View>
         )
     }
@@ -33,15 +40,17 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        backgroundColor: '#fff',
-        alignItems: 'center'
+        flexDirection: 'row',
+        alignItems: 'center',
+        textAlign: 'center',
     },
     buttons: {
         flex: 1,
-        flexDirection: 'row',
-        backgroundColor: '#000',
-        alignItems: 'center'
-    }
+        alignItems: 'center',
+    },
+    flexOne: {
+        flex:1
+      }
 
 });
 

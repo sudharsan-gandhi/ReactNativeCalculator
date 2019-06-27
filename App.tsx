@@ -1,17 +1,14 @@
 import React from 'react';
-import Numbers from './src/controller/Numbers';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
+import * as common from "./src/stylesheets/common"
 
 export default function App() {
   return (
-    <View style={styles.flexOne}>
-      <Numbers/>
-    </View>
+      <View style={common["flex-1"]}>
+        <View style = {common["flex-1"]}></View>
+        <View style = {common["flex-2"]}></View>
+      </View>
   );
 }
 
-const styles = StyleSheet.create({
-  flexOne: {
-    flex:1
-  }
-})
+
