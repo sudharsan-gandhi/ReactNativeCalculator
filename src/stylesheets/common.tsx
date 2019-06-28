@@ -27,6 +27,31 @@ export default StyleSheet.create({
     },
     "flex-9": {
         flex: 9
+    },
+    "flex-row": {
+        flexDirection: 'row'
+    },
+    "flex-column": {
+        flexDirection: 'column'
+    },
+    "vu-buttons": {
+        backgroundColor: '#bd4f6c', //popstar
+        flexDirection: 'column',
+        flex: 1
+    },
+    "vu-operators": {
+        backgroundColor: '#4ecdc4' //Medium Turquoise
+    },
+    "vu-result": {
+        backgroundColor: '#fefcfd' // Baby powder
+    },
+    "vu-memory": {
+        backgroundColor: '#27213c' // Yankees blue
+    },
+    "vu-input": {
+        backgroundColor: '#fff' //white
     }
 
+
 })
+
