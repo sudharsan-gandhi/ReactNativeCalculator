@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
         width: '100%',
         alignItems: 'center',
     }
-
+    // https://coolors.co/4ecdc4-27213c-0d0628-fefcfd-bd4f6c
 });
 
 
