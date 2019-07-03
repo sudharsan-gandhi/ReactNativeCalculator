@@ -50,6 +50,10 @@ export default StyleSheet.create({
     },
     "vu-input": {
         backgroundColor: '#fff' //white
+    },
+    "vu-end": {
+        justifyContent: 'flex-end',
+        alignItems:'flex-end'
     }
 
 

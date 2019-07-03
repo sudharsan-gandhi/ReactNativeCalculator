@@ -1,11 +1,27 @@
 import React, { Component } from 'react'
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native'
-import common from "../stylesheets/common"
+import common from "../../stylesheets/common"
 
 export class Numbers extends Component {
+    
+    constructor(props) {
+        super(props);
+    }
 
-    _onPressButton() {
-
+    _onPressButton(value) {
+        console.log('printing state', this.props.input)
+        switch(value) {
+            case 'clr': {
+                this.props.remove()
+                break
+            } 
+            default: {
+                this.props.insert(value)
+            }
+        }
+        
+        
+        console.log('after altering printing state', this.props.input.inputReducer)
     }
 
 
@@ -22,8 +38,8 @@ export class Numbers extends Component {
         const array = [];
         layer.map((value, index) =>
             array.push(
-                <TouchableOpacity style={styles.buttons} key={index} onPress={this._onPressButton}>
-                    <Text>{value}</Text>
+                <TouchableOpacity style={styles.buttons} key={index} onPressOut={() => {this._onPressButton(value)}}>
+                    <Text style={styles.view}>{value}</Text>
                 </TouchableOpacity>)
         )
         return array;
@@ -43,13 +59,17 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         flexDirection: 'row',
-        alignItems: 'center',
-        textAlign: 'center',
+        alignItems: 'center'
     },
     buttons: {
         flex: 1,
         width: '100%',
-        alignItems: 'center',
+        alignItems: 'center'
+    },
+    view: {
+        fontSize: 25,
+        color: '#0d0628',
+        fontWeight: '700'
     }
     // https://coolors.co/4ecdc4-27213c-0d0628-fefcfd-bd4f6c
 });

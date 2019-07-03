@@ -3,16 +3,34 @@ const payload = (data, type) => ({
     type: type
 })
 
+const Types = {
+    insert : 'insert',
+    remove : 'remove',
+    removeAll: 'removeAll',
+    mem_insert: 'mem_insert',
+    mem_remove: 'mem_remove',
+    replace: 'replace'
+}
+
 const insert = (data) => (payload(data,'insert'))
 
-const remove = (data) => (payload(data,'remove'))
+const replace = (data) => (payload(data, 'replace'))
 
-const removeAll = (data) => (payload(data,'removeAll'))
+const remove = () => ({type: 'remove'})
 
+const removeAll = () => ({type: 'removeAll'})
+
+const mem_insert = (data) => (payload(data, 'mem_insert'))
+
+const mem_remove = (data) => (payload(data, 'mem_remove'))
 
 
 export default {
     insert,
+    replace,
     remove,
     removeAll,
+    mem_insert,
+    mem_remove,
+    Types
 }
