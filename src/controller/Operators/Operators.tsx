@@ -18,7 +18,7 @@ export default class Operators extends Component {
         if( check && check != '' && !checker.includes(last_char) ) {
             if(value == '=') {
                 debugger
-                this.props.replace(eval(this.props.input.inputReducer))
+                this.props.replace(eval(this.props.input.inputReducer).toString())
             }else {
                 this.props.insert(value)
             }
