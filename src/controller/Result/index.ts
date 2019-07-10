@@ -1,27 +1,23 @@
 import { connect } from 'react-redux'
 import ACTIONS from '../../store/actions/types'
-import Operators from './Operators'
+import Result from './Result'
 
 const mapStateToProps = state => ({
-    input: state
+    result: state
 })
 
 
 const mapDispatchToProps = (dispatch)=> ({ 
     insert : (input) => {
         dispatch(ACTIONS.insert(input))
-    },replace : (input) => {
-        dispatch(ACTIONS.replace(input))
     }, remove : (input)=> {
         dispatch(ACTIONS.remove())
     }, removeAll: (input) => {
         dispatch(ACTIONS.removeAll())
-    }, set_result :(input) => {
-        dispatch(ACTIONS.set_result(input))
     } 
 })
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Operators);
+)(Result);

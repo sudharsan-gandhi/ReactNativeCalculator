@@ -1,12 +1,14 @@
 import {createStore, combineReducers, applyMiddleware} from 'redux';
 import inputReducer from './reducers/input'
 import memoryReducer from './reducers/memory'
+import resultReducer from './reducers/result'
 import { devToolsEnhancer } from 'redux-devtools-extension';
 import actionCreators from './actions/types'
 
 const reducers = combineReducers({
     inputReducer,
-    memoryReducer   
+    memoryReducer,
+    resultReducer   
 })
 
 const middleware = [];

@@ -17,8 +17,9 @@ export default class Operators extends Component {
         console.log('printing state', this.props.input)
         if( check && check != '' && !checker.includes(last_char) ) {
             if(value == '=') {
-                debugger
-                this.props.replace(eval(this.props.input.inputReducer).toString())
+                let result = eval(this.props.input.inputReducer).toString()
+                // this.props.replace(result)
+                this.props.set_result(result)
             }else {
                 this.props.insert(value)
             }
