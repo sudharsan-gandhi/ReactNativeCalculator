@@ -14,7 +14,8 @@ export class Result extends Component {
 
 const style = StyleSheet.create({
     view: {
-        fontSize: 30
+        fontSize: 35,
+        fontWeight: '500'
     }
 })
 
