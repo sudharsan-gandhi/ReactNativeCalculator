@@ -9,7 +9,6 @@ export default class Operators extends Component {
     }
 
     _onPressButton(value) {
-        debugger
         let check = this.props.input.inputReducer
         let last_char = check.charAt(check.length -1 )
         let checker = ['.','/','*','+','-','(',')']
