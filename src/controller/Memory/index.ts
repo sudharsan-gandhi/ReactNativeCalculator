@@ -12,6 +12,8 @@ const mapDispatchToProps = (dispatch)=> ({
         dispatch(ACTIONS.mem_insert(input))
     }, mem_remove : (input)=> {
         dispatch(ACTIONS.mem_remove(input))
+    }, layout : (input) => {
+        dispatch(ACTIONS.layout(input))
     }
 })
 

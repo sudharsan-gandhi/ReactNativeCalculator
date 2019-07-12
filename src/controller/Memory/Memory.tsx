@@ -6,6 +6,12 @@ export class Memory extends Component {
     constructor(props) {
         super(props)
     }
+
+    saveLayout(event) {
+        debugger;
+        this.props.layout({layout: 'memoryArea', area: event.nativeEvent.layout})
+    }
+
     memoryRenderer() {
         var html = [];
         if (this.props.memory.memoryReducer &&
@@ -22,7 +28,7 @@ export class Memory extends Component {
     }
 
     render() {
-        return (<View>{this.memoryRenderer()}</View>)
+        return (<View onLayout= {(event) => this.saveLayout(event)}>{this.memoryRenderer()}</View>)
     }
 }
 const style = StyleSheet.create({
