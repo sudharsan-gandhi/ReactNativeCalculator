@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Animated } from 'react-native'
+import { View, Animated, Dimensions } from 'react-native'
 import common from './src/stylesheets/common'
 import Numbers from './src/controller/Numbers'
 import Operators from './src/controller/Operators'
@@ -8,6 +8,7 @@ import store from './src/store/store'
 import ShowInput from './src/controller/ShowInput';
 import Result from './src/controller/Result';
 import Memory from './src/controller/Memory';
+
 
 export default function App() {
   return (

@@ -22,6 +22,7 @@ export class Result extends Component {
                 null, { dx: this.state.pan.x, dy: this.state.pan.y }
               ]),
               onPanResponderRelease: (e, gesture) => {
+                debugger
                 Animated.spring(this.state.pan, {
                     toValue: { x: 0, y: 0 },
                     friction: 5

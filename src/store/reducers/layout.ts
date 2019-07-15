@@ -6,8 +6,8 @@ export default (state = {}, action) => {
             let new_state = {...state}
             debugger;
             switch (action.layout) {
-                case 'memoryArea' : {
-                    new_state.memoryArea = action.area
+                case 'flex' : {
+                    new_state = action
                 }
                 return new_state
             }
