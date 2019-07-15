@@ -29,7 +29,7 @@ const mem_insert = (data) => (payload(data, 'mem_insert'))
 
 const mem_remove = (data) => (payload(data, 'mem_remove'))
 
-const layout = (data) => ({...data, type: 'layout'})
+const layout = (data) => (payload(data, 'layout'))
 
 
 export default {
