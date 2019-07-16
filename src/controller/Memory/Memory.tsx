@@ -37,7 +37,7 @@ export class Memory extends Component {
     }
 
     render() {
-        return (<View style={[common["flex-row"],style["flex-wrap"]]}>{this.memoryRenderer()}</View>)
+        return (<View style={[common["flex-row"],common["flex-1"],style["flex-wrap"]]}>{this.memoryRenderer()}</View>)
     }
 }
 const style = StyleSheet.create({
@@ -48,8 +48,8 @@ const style = StyleSheet.create({
         color: '#fff',
         backgroundColor: '#27213c',
         borderRadius: 5,
-        margin: '2px',
-        padding: '2px',
+        margin: 2,
+        padding: 2,
         textAlign: 'center',
         flex: 1
     },
