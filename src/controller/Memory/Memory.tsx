@@ -26,7 +26,7 @@ export class Memory extends Component {
         if (this.props.memory.memoryReducer &&
             this.props.memory.memoryReducer.length > 0) {
             this.props.memory.memoryReducer.map((cache, index) =>
-                html.push(<Text key={index.toString()} style={[style.memory]}>{item}</Text>)
+                html.push(<Text key={index.toString()} style={[style.memory]}>{cache}</Text>)
             )
         } else {
             html = [];
@@ -37,11 +37,12 @@ export class Memory extends Component {
     }
 
     render() {
-        return (<View>{this.memoryRenderer()}</View>)
+        return (<View style={[common["flex-row"],style["flex-wrap"]]}>{this.memoryRenderer()}</View>)
     }
 }
 const style = StyleSheet.create({
     memory: {
+        height : 25,
         fontSize: 20,
         fontWeight: '300',
         color: '#fff',
@@ -50,7 +51,10 @@ const style = StyleSheet.create({
         margin: '2px',
         padding: '2px',
         textAlign: 'center',
-        flex: 3
+        flex: 1
+    },
+    "flex-wrap": {
+        flexWrap: 'wrap'
     }
 })
 export default Memory

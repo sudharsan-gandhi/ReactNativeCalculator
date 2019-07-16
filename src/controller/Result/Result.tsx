@@ -23,6 +23,9 @@ export class Result extends Component {
               ]),
               onPanResponderRelease: (e, gesture) => {
                 debugger
+                if(gesture.moveY <= this.props.result.layoutReducer.area.memory) {
+                    this.props.mem_insert(this.props.result.resultReducer)
+                }
                 Animated.spring(this.state.pan, {
                     toValue: { x: 0, y: 0 },
                     friction: 5

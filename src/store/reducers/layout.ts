@@ -5,8 +5,6 @@ export default (state = {}, action) => {
         case ACTIONS.Types.layout: {
                 return action.payload
             }
-            return state
-
         default: return state
     }
 }

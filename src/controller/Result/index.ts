@@ -14,6 +14,8 @@ const mapDispatchToProps = (dispatch)=> ({
         dispatch(ACTIONS.remove())
     }, removeAll: (input) => {
         dispatch(ACTIONS.removeAll())
+    }, mem_insert : (input) => {
+        dispatch(ACTIONS.mem_insert(input))
     } 
 })
 

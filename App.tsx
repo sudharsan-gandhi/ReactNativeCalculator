@@ -14,7 +14,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <View style={common["flex-1"]}>
-        <View style = {[common["flex-1"],common["vu-operators"]]}>
+        <View style = {[common["flex-1"],common["flex-row"],common["vu-operators"]]}>
           <Memory />
         </View>
         <View style = {[common["flex-2"],common["vu-input"],common["vu-end"]]}>
