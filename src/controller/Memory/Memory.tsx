@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, StyleSheet, Dimensions } from 'react-native'
+import { Text, View, StyleSheet, Dimensions, Animated, Button } from 'react-native'
 import common from '../../stylesheets/common'
 
 export class Memory extends Component {
@@ -26,7 +26,13 @@ export class Memory extends Component {
         if (this.props.memory.memoryReducer &&
             this.props.memory.memoryReducer.length > 0) {
             this.props.memory.memoryReducer.map((cache, index) =>
-                html.push(<Text key={index.toString()} style={[style.memory]}>{cache}</Text>)
+                html.push(<Animated.Text key={index.toString()} style={[style.memory]}>{cache}
+                <Button
+                onPress={() => this.props.mem_remove(cache)}
+                title="-"
+                color="#841584"
+                accessibilityLabel="remove from memory"
+              /></Animated.Text>)
             )
         } else {
             html = [];
@@ -42,7 +48,7 @@ export class Memory extends Component {
 }
 const style = StyleSheet.create({
     memory: {
-        height : 25,
+        height : 30,
         fontSize: 20,
         fontWeight: '300',
         color: '#fff',
@@ -54,6 +60,7 @@ const style = StyleSheet.create({
         flex: 1
     },
     "flex-wrap": {
+        flexBasis: '100%',
         flexWrap: 'wrap'
     }
 })
